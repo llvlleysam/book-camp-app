@@ -6,11 +6,14 @@ import { endPointBootCamps } from "../constant/BaseUrls";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import SkeletonCard from "../Skeleton/SkeletonCard";
 import { useEffect } from "react";
-const accessToken = localStorage.getItem("accessToken")
+
+
+
 export default function BootCamps() {
   const { data: cards, isLoading } = useGetCard();
   const [searchParams,setSearchParams]=useSearchParams()
   const navigate = useNavigate()
+  const accessToken = localStorage.getItem("accessToken")
   useEffect(()=>{
     if(!accessToken){
       navigate("/login")
