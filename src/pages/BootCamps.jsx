@@ -3,12 +3,19 @@ import Card from "../components/Common/Card";
 import { useGetCard } from "../Hooks/GetCard";
 import { http } from "../Services/BaseServce";
 import { endPointBootCamps } from "../constant/BaseUrls";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import SkeletonCard from "../Skeleton/SkeletonCard";
-
+import { useEffect } from "react";
+const accessToken = localStorage.getItem("accessToken")
 export default function BootCamps() {
   const { data: cards, isLoading } = useGetCard();
   const [searchParams,setSearchParams]=useSearchParams()
+  const navigate = useNavigate()
+  useEffect(()=>{
+    if(!accessToken){
+      navigate("/login")
+    }
+  },[])
   // console.log(searchParams.get("registration"))
   // const{data:cards}=useQuery({
   //   queryKey:["cards"],

@@ -1,11 +1,7 @@
-import { useNavigate } from "react-router-dom"
 
-const accessToken = localStorage.getItem("accessToken")
+
 export default function HomePage() {
-  const navigate = useNavigate()
-  // if(accessToken){
-  //   navigate("/login")
-  // }
+ 
  
     return (
     <div className="flex w-full h-screen">
