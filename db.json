@@ -4,16 +4,6 @@
       "email": "meysam@yahoo.com",
       "password": "$2a$10$tfIT9db8fApe6UcsP/jaL.2omg/aILV/cIlhrcw17iNBDCIpo61hS",
       "id": 1
-    },
-    {
-      "email": "reza@yahoo.com",
-      "password": "$2a$10$URzhZtq9LP4n5BqYAPXqnO7p.GA0TwqSr8rboWLED5qy8p6n/Yn8S",
-      "id": 2
-    },
-    {
-      "email": "reza00@yahoo.com",
-      "password": "$2a$10$rGOhBJnUY6h1zcb5L8dzy.oHjsaWezDyeuxCe0iE7RL9gXOlvYLnu",
-      "id": 3
     }
   ],
   "bootcamps": [
@@ -21,65 +11,89 @@
       "id": 1,
       "name": "React",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dignissimos est natus, corrupti dolorem ipsum laudantium sapiente optio velit officia qui incidunt facere facilis sunt labore consectetur aliquam debitis minus!",
-      "price":"27.000.000",
-      "image":["./react.png","./react-2.jpg"],
-      "registration":false
+      "price": "27.000.000",
+      "image": [
+        "./react.png",
+        "./react-2.jpg"
+      ],
+      "registration": false
     },
     {
       "id": 2,
       "name": "Node Js",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dignissimos est natus, corrupti dolorem ipsum laudantium sapiente optio velit officia qui incidunt facere facilis sunt labore consectetur aliquam debitis minus!",
-      "price":"20.000.000",
-      "image":["./node.png","./nodejs-2.jpg"],
-      "registration":true
+      "price": "20.000.000",
+      "image": [
+        "./node.png",
+        "./nodejs-2.jpg"
+      ],
+      "registration": true
     },
     {
       "id": 3,
       "name": "Android",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dignissimos est natus, corrupti dolorem ipsum laudantium sapiente optio velit officia qui incidunt facere facilis sunt labore consectetur aliquam debitis minus!",
-      "price":"7.000.000",
-      "image":["./android.png","./android-2.jpg"],
-      "registration":false
+      "price": "7.000.000",
+      "image": [
+        "./android.png",
+        "./android-2.jpg"
+      ],
+      "registration": false
     },
     {
       "id": 4,
       "name": "Java",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dignissimos est natus, corrupti dolorem ipsum laudantium sapiente optio velit officia qui incidunt facere facilis sunt labore consectetur aliquam debitis minus!",
-      "price":"40.000.000",
-      "image":["./java.png","./java-2.jpg"],
-      "registration":true
+      "price": "40.000.000",
+      "image": [
+        "./java.png",
+        "./java-2.jpg"
+      ],
+      "registration": true
     },
     {
       "id": 5,
       "name": "Php",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dignissimos est natus, corrupti dolorem ipsum laudantium sapiente optio velit officia qui incidunt facere facilis sunt labore consectetur aliquam debitis minus!",
-      "price":"30.000.000",
-      "image":["./php.png","./php-2.jpg"],
-      "registration":true
+      "price": "30.000.000",
+      "image": [
+        "./php.png",
+        "./php-2.jpg"
+      ],
+      "registration": true
     },
     {
       "id": 6,
       "name": "Python",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dignissimos est natus, corrupti dolorem ipsum laudantium sapiente optio velit officia qui incidunt facere facilis sunt labore consectetur aliquam debitis minus!",
-      "price":"21.000.000",
-      "image":["./python.png","./python-2.jpg"],
-      "registration":false
+      "price": "21.000.000",
+      "image": [
+        "./python.png",
+        "./python-2.jpg"
+      ],
+      "registration": false
     },
     {
       "id": 7,
       "name": "UI/UX",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dignissimos est natus, corrupti dolorem ipsum laudantium sapiente optio velit officia qui incidunt facere facilis sunt labore consectetur aliquam debitis minus!",
-      "price":"10.000.000",
-      "image":["./UIUX ICON.png","./UIUX ICON-2.jpg"],
-      "registration":true
+      "price": "10.000.000",
+      "image": [
+        "./UIUX ICON.png",
+        "./UIUX ICON-2.jpg"
+      ],
+      "registration": true
     },
     {
       "id": 8,
       "name": "Java",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dignissimos est natus, corrupti dolorem ipsum laudantium sapiente optio velit officia qui incidunt facere facilis sunt labore consectetur aliquam debitis minus!",
-      "price":"50.000.000",
-      "image":["./c.png","./c-2.jpg"],
-      "registration":true
+      "price": "50.000.000",
+      "image": [
+        "./c.png",
+        "./c-2.jpg"
+      ],
+      "registration": true
     }
   ]
 }
