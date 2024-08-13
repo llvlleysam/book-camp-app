@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 export default function Card({ card }) {
   const { id, name, description, price, image , registration } = card;
-  // console.log(card)
   return (
     <Link to={`/singlecard/${id}`}>
       <div className="flex flex-col items-center gap-4 border-2 drop-shadow-xl bg-white col-span-1 p-4 transition duration-300 hover:scale-105">

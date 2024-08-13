@@ -4,7 +4,6 @@ import { useLocation, useSearchParams } from "react-router-dom";
 
 export function useGetCard(){
     const searchUrl = useLocation().search
-    console.log(searchUrl)
     return useQuery({
         queryKey:["card",searchUrl],
         queryFn:()=> getCard(searchUrl)

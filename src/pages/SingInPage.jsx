@@ -21,11 +21,14 @@ export default function SingInPage() {
 
       const {mutate}=useMutation({
         mutationFn:async(credentials)=>{
-            const res = await httpService.post("/signup",credentials)
+          try{
+              const res = await httpService.post("/signup",credentials)
              if(res.status===201){
                 navigate("/login")
             }
-            console.log(res)
+          }catch(e){
+              console.log(e.response.data)
+            }
             return res
         },
         onSuccess:()=>{}
@@ -39,8 +42,9 @@ export default function SingInPage() {
       <p className="bg-gray-400 py-2 px-6 rounded-t-lg text-white font-bold">Sing Up</p>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-3/5 gap-4 bg-gray-400 p-8 rounded-xl">
         <input {...register("email")} className=" py-2 rounded-lg border border-black drop-shadow-lg pl-4" type="text" placeholder="UserName"/>
-         {/* <span className={errors.firstName ?"":"hidden" }>{errors.firstName}</span> */}
+        {errors.email && <span className="text-red-500 text-lg ">{errors?.email.message}</span>}
         <input {...register("password")} className=" py-2 rounded-lg border border-black drop-shadow-lg pl-4" type="password" placeholder="Password"/>
+        {errors.password && <span className="text-red-500 text-lg ">{errors?.password.message}</span>}
         <input className=" py-2 rounded-lg border border-white bg-gray-700 text-white hover:bg-gray-500 transition duration-200 drop-shadow-lg" type="submit" value={"Sing Up"} />
       </form>
       <p>Go to <span onClick={()=>navigate("/login")} className="text-blue-500 font-bold cursor-pointer">Login Page</span></p>

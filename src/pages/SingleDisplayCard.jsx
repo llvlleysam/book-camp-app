@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom"
 import { useSingleGetCard } from "../Hooks/GetCard"
 import { useEffect } from "react"
+import SkeletonSingleDisplayCard from "../Skeleton/SkeletonSingleDisplayCard"
 
 export default function SingleDisplayCard() {
   const navigate = useNavigate()
@@ -12,10 +13,8 @@ export default function SingleDisplayCard() {
         navigate("/login")
       }
     },[])
-    // const{id, name, description, price, image}=card
-    // console.log(data.image[1])
     if(isLoading){
-        return(<div>Loading ...</div>)
+        return(<SkeletonSingleDisplayCard/>)
     }
   return (
     <div className=" flex flex-col items-center gap-6 p-8">

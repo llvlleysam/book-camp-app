@@ -1,8 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
 import Card from "../components/Common/Card";
 import { useGetCard } from "../Hooks/GetCard";
-import { http } from "../Services/BaseServce";
-import { endPointBootCamps } from "../constant/BaseUrls";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import SkeletonCard from "../Skeleton/SkeletonCard";
 import { useEffect } from "react";
@@ -19,19 +16,10 @@ export default function BootCamps() {
       navigate("/login")
     }
   },[])
-  // console.log(searchParams.get("registration"))
-  // const{data:cards}=useQuery({
-  //   queryKey:["cards"],
-  //   queryFn:async()=>(await http.get(endPointBootCamps)).data
-  // })
-  // if(isLoading){
-  //   return (<div>Loading ...</div>)
-  // }
-  // console.log(cards);
   return (
     <div className="p-8 mt-20 flex flex-col items-center gap-6 ">
       <div className="w-3/4 flex justify-around items-center bg-orange-300 py-4 rounded-lg drop-shadow-lg">
-        <input className="w-3/5 py-2 rounded-lg border-2 border-orange-500 pl-2" type="text" placeholder="Search BootCamp ..." onChange={(e)=>e.target.value.length>0 ? setSearchParams((prev)=>{
+        <input className="w-3/5 py-2 rounded-lg border-2 border-orange-500 pl-2" type="text" placeholder="Search BootCamp ..." value={searchParams?.get("name_like")} onChange={(e)=>e.target.value.length>0 ? setSearchParams((prev)=>{
           prev.set("name_like",e.target.value)
           return prev
           }) : setSearchParams((prev)=>{
@@ -49,9 +37,7 @@ export default function BootCamps() {
         </label>
       </div>
       <div className="w-full grid grid-cols-3 gap-8">
-        {isLoading ? Array.from({length:3}).map(index=><SkeletonCard key={index}/>)  : cards?.map((card) => (
-          <Card key={card.id} card={card} />
-        ))}
+        {isLoading ? Array.from({length:3}).map((index)=><SkeletonCard key={index}/>)  : cards ? cards.map((card) => (<Card key={card.id} card={card} />)) : console.log("hi")}
       </div>
     </div>
   );
