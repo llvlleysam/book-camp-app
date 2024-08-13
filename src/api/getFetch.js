@@ -1,8 +1,8 @@
 import { endPointBootCamps } from "../constant/BaseUrls";
 import { http } from "../Services/BaseServce";
 
-export async function getCard(registration="") {
-    const response = await http.get(`${endPointBootCamps}${registration ? `?registration=${registration}` : ""}`)
+export async function getCard(search="") {
+    const response = await http.get(`${endPointBootCamps}${search}`)
     return response.data
 }
 

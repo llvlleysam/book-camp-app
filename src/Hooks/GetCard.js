@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCard, singleGetCard } from "../api/getFetch";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 export function useGetCard(){
-    const [searchParams, setSearchParams]=useSearchParams()
-    // console.log(searchParams.get("registration"))
+    const searchUrl = useLocation().search
+    console.log(searchUrl)
     return useQuery({
-        queryKey:["card",searchParams.get("registration")],
-        queryFn:()=> getCard(searchParams.get("registration"))
+        queryKey:["card",searchUrl],
+        queryFn:()=> getCard(searchUrl)
     })
 }
 
