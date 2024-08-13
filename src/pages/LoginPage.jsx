@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { userSchema } from "../schema/schemaZod"
-import { useNavigate } from "react-router-dom"
+import { redirect, useNavigate } from "react-router-dom"
 import { useMutation } from "@tanstack/react-query"
 import httpService from "../Services/BaseServce"
 
@@ -24,13 +24,14 @@ export default function LoginPage() {
              if(res.status===200){
                 localStorage.setItem("accessToken",res.data.accessToken)
                 localStorage.setItem("email",res.data.user.email)
-                navigate("/")
+                
             }
-            console.log(res)
-            return res
+            return res.data
         },
-        onSuccess:()=>{}
-      })
+        onSuccess:()=>{ navigate("/bootcamps")}
+          
+        
+})
       function onSubmit(values){
         mutate(values)
       }

@@ -2,12 +2,12 @@ import { useNavigate, useParams } from "react-router-dom"
 import { useSingleGetCard } from "../Hooks/GetCard"
 import { useEffect } from "react"
 
-const accessToken = localStorage.getItem("accessToken")
 export default function SingleDisplayCard() {
-    const navigate = useNavigate()
-    const {id}=useParams()
-    const{data,isLoading}=useSingleGetCard(id)
-    useEffect(()=>{
+  const navigate = useNavigate()
+  const {id}=useParams()
+  const{data,isLoading}=useSingleGetCard(id)
+  useEffect(()=>{
+    const accessToken = localStorage.getItem("accessToken")
       if(!accessToken){
         navigate("/login")
       }
