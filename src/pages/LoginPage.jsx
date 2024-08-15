@@ -4,6 +4,7 @@ import { userSchema } from "../schema/schemaZod"
 import { redirect, useNavigate } from "react-router-dom"
 import { useMutation } from "@tanstack/react-query"
 import httpService from "../Services/BaseServce"
+import { AppRoutes } from "../config/Routes";
 
 export default function LoginPage() {
     const navigate=useNavigate()
@@ -25,13 +26,13 @@ export default function LoginPage() {
              if(res.status===200){
                 localStorage.setItem("accessToken",res.data.accessToken)
                 localStorage.setItem("email",res.data.user.email)}
-                
+                navigate(AppRoutes.BOOTCAMP)
             } catch(e){
               console.log(e.response.data)
             }
             return res.data
         },
-        onSuccess:()=>{ navigate("/bootcamps")}
+        onSuccess:()=>{ }
           
         
 })
